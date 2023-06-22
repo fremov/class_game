@@ -31,9 +31,13 @@ namespace Frem {
 		{
 			return this->name;
 		}
-		double get_health()
+		double get_health() 
 		{
 			return this->health;
+		}
+		void set_health(double health)
+		{
+			this->health = health;
 		}
 		double get_damage()
 		{
