@@ -32,11 +32,14 @@ namespace Frem {
 		{
 			return this->name;
 		}
+		void set_name(const std::string& name) {
+			this->name = name;
+		}
 		double get_health() 
 		{
 			return this->health;
 		}
-		void set_health(double health)
+		void set_health(double& health)
 		{
 			this->health = health;
 		}
@@ -44,18 +47,15 @@ namespace Frem {
 		{
 			return this->damage;
 		}
+		void set_damage(double& damage) {
+			this->damage = damage;
+		}
 		void get_info()
 		{
 			std::cout << "name: " << this->name << std::endl;
 			std::cout << "damage: " << this->damage << std::endl;
 			std::cout << "HP: " << this->health << std::endl;
 		}
-		void attack(Actor attacked, Actor agressor)
-		{
-			attacked.health = 15;
-		};
-
-		
 	};
 	
 }

@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include <vector>
 #include <iostream>
+
 namespace GameEvents {
 
     struct AttackData {
