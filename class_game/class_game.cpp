@@ -1,9 +1,8 @@
 ﻿#include "Actor.h"
-#include "PLayer.h"
 #include "GameEvents.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
-
+#include "TexturesController.h"
 int main()
 {
     using namespace sf;
@@ -22,16 +21,11 @@ int main()
 	//Player_1.set_name("Player 1 edited");
 	//std::cout << Player_1.get_name() << std::endl;
 
-	RenderWindow win(VideoMode(900, 900), "Figures", Style::Default);
+	RenderWindow win(VideoMode(900, 900), "Frem", Style::Default);
+	
+	TextureController::LoadTexture("carmen", "images/carmen.png");
+	Sprite carmen(TextureController::GetTexture("carmen"));
 
-	Texture carmen_texture;
-
-	if (!carmen_texture.loadFromFile("images/carmen.png"))
-	{
-		std::cout << "Error load image";
-		return -1;
-	}
-	Sprite sprite(carmen_texture);
 
 	while (win.isOpen())
 	{
@@ -45,8 +39,8 @@ int main()
 			}
 		}
 
-		win.clear();
-		win.draw(sprite);
+		
+		win.draw(carmen);
 		win.display();
 	}
 	return 0;

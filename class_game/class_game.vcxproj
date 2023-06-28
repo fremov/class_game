@@ -130,13 +130,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Carmen.h" />
     <ClCompile Include="class_game.cpp" />
+    <ClCompile Include="TextureController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="GameEvents.h" />
-    <ClInclude Include="PLayer.h" />
+    <ClInclude Include="TexturesController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

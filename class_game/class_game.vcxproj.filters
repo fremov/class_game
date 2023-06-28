@@ -18,18 +18,18 @@
     <ClCompile Include="class_game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Carmen.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClCompile Include="TextureController.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="PLayer.h">
+    <ClInclude Include="GameEvents.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="GameEvents.h">
+    <ClInclude Include="TexturesController.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
