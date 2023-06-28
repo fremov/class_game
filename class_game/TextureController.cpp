@@ -1,5 +1,6 @@
 #include "TexturesController.h"
 #include <iostream>
+#include "logger.h"
 
 
 std::map<std::string, sf::Texture> TextureController::textures;
@@ -8,8 +9,11 @@ void TextureController::LoadTexture(const std::string& name, const std::string& 
 	sf::Texture texture;
 	if (texture.loadFromFile(filename))
 	{
-		std::cout << "Load texture " << name << " sucsesful" << std::endl;
+		std::cout << ConsoleColor::green << "[Texture] " << filename <<  ConsoleColor::reset << std::endl;
 		textures[name] = texture;
+	}
+	else {
+		std::cout << ConsoleColor::red << "[Texture] " << filename << ConsoleColor::reset << std::endl;
 	}
 }
 
