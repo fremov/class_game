@@ -12,8 +12,12 @@ int main()
 
 	Frem::Actor Player_1;
 	Player_1.set_name("new Name player 1");
-	cout << Player_1.get_name() << endl;
-
+	Player_1.set_damage(22);
+	Player_1.set_health(100);
+	Player_1.set_texture("player_texture", "images/bee.png");
+	Player_1.get_info();
+	Sprite player_sprite(TextureController::GetTexture("player_texture"));
+	
 	//Frem::Actor Player_2("Player 2", false, 15.1, 12.1);
 
 	//GameEvents::attack(&Player_1, &Player_2); // вызываем функцию attack и сохраняем результат
@@ -57,6 +61,7 @@ int main()
 		
 		win.draw(carmen);
 		win.draw(hexagon);
+		win.draw(player_sprite);
 		win.draw(player_name);
 		win.display();
 	}
