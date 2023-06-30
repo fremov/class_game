@@ -1,61 +1,38 @@
 #pragma once
 #include <vector>
-#include <string>
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
 namespace Frem {
 	class Actor {
 	private:
-		std::string name;
-		double health;
-		double magicka;
-		double stamina;
-		bool is_player;
-		double damage;
-		std::vector<std::string> passives;
-		std::vector<std::string> skills;
-		std::vector<std::string> items;
-
+		std::string m_name = "player";
+		double m_health = 0.f;
+		double m_magicka = 0.f;
+		double m_stamina = 0.f;
+		bool m_is_player = false;
+		double m_damage = 0.f;
+		std::vector<std::string> m_passives {};
+		std::vector<std::string> m_skills {};
+		std::vector<std::string> m_items {};
+		sf::Vector2f m_position;
+		sf::Vector2f m_size;
+		float m_spead;
+		sf::Texture m_texture;
+		sf::Sprite m_sprite;
 	public:
-		Actor(std::string name, bool is_player, double health, double damage)
-		{
-			this->name = name;
-			this->is_player = is_player;
-			this->health = health;
-			this->damage = damage;
-		};
-		void move(double x, double y, double z)
-		{
-			std::cout << "Player move to" << x << " " << y << " " << z << std::endl;
-		}
-		std::string get_name()
-		{
-			return this->name;
-		}
-		void set_name(const std::string& name) {
-			this->name = name;
-		}
-		double get_health() 
-		{
-			return this->health;
-		}
-		void set_health(double& health)
-		{
-			this->health = health;
-		}
-		double get_damage()
-		{
-			return this->damage;
-		}
-		void set_damage(double& damage) {
-			this->damage = damage;
-		}
-		void get_info()
-		{
-			std::cout << "name: " << this->name << std::endl;
-			std::cout << "damage: " << this->damage << std::endl;
-			std::cout << "HP: " << this->health << std::endl;
-		}
+		//Actor(float x, float y, float withd, float height);
+
+		void update(float deltaTime);
+		void draw(sf::RenderWindow& window);
+		void handleInput();
+		void handleCollision();
+		std::string get_name();
+		void set_name(const std::string& name);
+		double get_health();
+		void set_health(double& health);
+		double get_damage();
+		void set_damage(double& damage);
+		void get_info();
 	};
 	
 }

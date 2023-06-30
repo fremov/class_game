@@ -10,7 +10,10 @@ int main()
 	using std::cout;
 	using std::endl;
 
-	Frem::Actor Player_1("Player 1", true, 100.1, 5.2);
+	Frem::Actor Player_1;
+	Player_1.set_name("new Name player 1");
+	cout << Player_1.get_name() << endl;
+
 	//Frem::Actor Player_2("Player 2", false, 15.1, 12.1);
 
 	//GameEvents::attack(&Player_1, &Player_2); // вызываем функцию attack и сохраняем результат
@@ -27,6 +30,10 @@ int main()
 	TextureController::LoadTexture("carmen", "images/carmen.png");
 	Sprite carmen(TextureController::GetTexture("carmen"));
 	
+	TextureController::LoadTexture("hexagon", "images/hexagon.png");
+	Sprite hexagon(TextureController::GetTexture("hexagon"));
+	hexagon.setRotation(90.f);
+
 
 	FontController::LoadFont("mainfont", "fonts/TT Travels Trial Black.otf");
 	sf::Text player_name;
@@ -49,6 +56,7 @@ int main()
 
 		
 		win.draw(carmen);
+		win.draw(hexagon);
 		win.draw(player_name);
 		win.display();
 	}

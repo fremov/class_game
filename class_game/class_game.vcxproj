@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="FontController.cpp" />
     <ClCompile Include="FontController.h" />
     <ClCompile Include="class_game.cpp" />

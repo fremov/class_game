@@ -11,7 +11,7 @@ namespace GameEvents {
         double damage;
     };
 
-    std::vector<AttackData> attack(Frem::Actor* attacker, Frem::Actor* attacked)
+   /* std::vector<AttackData> attack(Frem::Actor* attacker, Frem::Actor* attacked)
     {
         double damage = attacker->get_damage();
         double health = attacked->get_health();
@@ -20,6 +20,6 @@ namespace GameEvents {
         attacked->set_health(res);
         std::cout << attacker->get_name() << " hit " << attacked->get_name() << " by " << damage << std::endl;
         return { data };
-    }
+    }*/
 
 }
